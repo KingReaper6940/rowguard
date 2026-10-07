@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>RowGuard comparison report</title><style>
+body{font:16px/1.6 system-ui,sans-serif;background:#f4f7fa;color:#182b40;margin:0;padding:32px}
+main{max-width:1100px;margin:auto}h1{font-size:36px;margin-bottom:0}.muted{color:#52677c}
+.stats{display:flex;flex-wrap:wrap;gap:16px;margin:24px 0}.stat{background:white;border:1px solid #cdd7e2;border-radius:12px;padding:16px 24px;min-width:110px}.stat strong{display:block;font-size:30px}
+section{background:white;padding:24px;border-radius:12px;margin:20px 0;border:1px solid #cdd7e2}h2{margin-top:0}
+.scroll{overflow:auto}table{border-collapse:collapse;width:100%;text-align:left}th,td{border-bottom:1px solid #dce3eb;padding:12px;vertical-align:top;white-space:pre-wrap;overflow-wrap:anywhere}th{background:#edf3f8}code{background:#edf3f8;padding:2px 5px}
+@media print{body{padding:0;background:white}section{break-inside:avoid}}@media(max-width:600px){body{padding:16px}.stat{flex:1;padding:12px}}
+</style></head><body><main><p class="muted">OFFLINE EXPORT RECONCILIATION</p>
+<h1>RowGuard</h1><p>Changes found between these exports. Matched by <code>sku</code>.</p>
+<div class="stats"><div class="stat">added<strong>1</strong></div><div class="stat">removed<strong>1</strong></div><div class="stat">changed<strong>1</strong></div><div class="stat">Unchanged shared values<strong>1</strong></div></div>
+<p class="muted">3 rows before · 3 rows after. Values are compared as exact text. Schema differences appear separately.</p>
+<section><h2>Column changes</h2><p>Added: []</p><p>Removed: []</p></section>
+<section><h2>Changed cells</h2><div class="scroll"><table><thead><tr><th>Key</th><th>Column</th><th>Before</th><th>After</th></tr></thead><tbody><tr><td>CAP-1</td><td>price</td><td>18.00</td><td>20.00</td></tr><tr><td>CAP-1</td><td>stock</td><td>12</td><td>9</td></tr></tbody></table></div></section>
+<section><h2>Added rows</h2><div class="scroll"><table><thead><tr><th>Key</th><th>Row values</th></tr></thead><tbody><tr><td>BAG-4</td><td>{&quot;sku&quot;:&quot;BAG-4&quot;,&quot;name&quot;:&quot;Tote bag&quot;,&quot;price&quot;:&quot;16.00&quot;,&quot;stock&quot;:&quot;20&quot;}</td></tr></tbody></table></div></section>
+<section><h2>Removed rows</h2><div class="scroll"><table><thead><tr><th>Key</th><th>Row values</th></tr></thead><tbody><tr><td>MUG-2</td><td>{&quot;sku&quot;:&quot;MUG-2&quot;,&quot;name&quot;:&quot;Mug, blue&quot;,&quot;price&quot;:&quot;14.00&quot;,&quot;stock&quot;:&quot;8&quot;}</td></tr></tbody></table></div></section>
+<p class="muted">Generated locally by RowGuard. No scripts, network requests or external assets.</p>
+</main></body></html>
