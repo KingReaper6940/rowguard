@@ -2,11 +2,12 @@
 import { readFile, stat, writeFile } from 'node:fs/promises';
 import { parseCSV } from './csv.mjs';
 import { compare } from './compare.mjs';
+import { htmlReport } from './report.mjs';
 
 const help = `RowGuard — compare CSV exports locally by unique ID
 
 Usage: node src/cli.mjs before.csv after.csv --key COLUMN [options]
-  --format text|json       Output format (default: text)
+  --format text|json|html  Output format (default: text)
   --out PATH               Save to a new file; existing files are never overwritten
   --delimiter CHAR         Field separator (use "tab" for TSV)
   --fail-on-change         Exit 1 if differences are found
@@ -28,7 +29,7 @@ function options(args) {
     else result.files.push(arg);
   }
   if (result.files.length !== 2 || !result.key) throw new Error('Provide two files and --key COLUMN. Use --help for examples.');
-  if (!['text', 'json'].includes(result.format)) throw new Error('Format must be text or json.');
+  if (!['text', 'json', 'html'].includes(result.format)) throw new Error('Format must be text, json or html.');
   if (result.delimiter === 'tab') result.delimiter = '\t';
   return result;
 }
@@ -59,7 +60,8 @@ try {
     const opts = options(process.argv.slice(2));
     const [before, after] = await Promise.all(opts.files.map(f => load(f, opts.delimiter)));
     const result = compare(before, after, opts.key);
-    const output = (opts.format === 'json' ? JSON.stringify(result, null, 2) : textReport(result)) + '\n';
+    const output = (opts.format === 'json' ? JSON.stringify(result, null, 2)
+      : opts.format === 'html' ? htmlReport(result) : textReport(result)) + '\n';
     if (opts.out) await writeFile(opts.out, output, { flag: 'wx' });
     else process.stdout.write(output);
     if (opts.fail && result.summary.hasDifferences) process.exitCode = 1;
