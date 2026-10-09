@@ -1,5 +1,7 @@
 # RowGuard
 
+[Open RowGuard](https://rowguard-snowy.vercel.app/) · [Source code](https://github.com/KingReaper6940/rowguard)
+
 Compare two CSV exports by a unique ID instead of line position. Find added,
 removed, and changed records even when the exports have different row orders.
 Get a readable HTML report without uploading your files.
@@ -91,3 +93,4 @@ Import this repository into Vercel. The included `vercel.json` configures
 
 `npm test` runs parser, comparison, CLI and HTML-escaping tests. The website can
 be previewed locally with the commands above.
+

@@ -8,7 +8,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "test": "node --test test/*.test.mjs",
+    "test": "node --test test/cli.test.mjs test/compare.test.mjs test/csv.test.mjs test/report.test.mjs",
     "demo": "node src/cli.mjs examples/before.csv examples/after.csv --key sku",
     "build": "node scripts/build.mjs",
     "preview": "node scripts/serve.mjs"
