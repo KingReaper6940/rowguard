@@ -6,3 +6,7 @@ node_modules/
 reports/
 coverage/
 repos/
+
+private/
+.vercel/
+dist/

@@ -1,0 +1,16 @@
+{
+  "name": "rowguard",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Offline, key-aware CSV comparison with strict validation",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "demo": "node src/cli.mjs examples/before.csv examples/after.csv --key sku",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs"
+  }
+}
